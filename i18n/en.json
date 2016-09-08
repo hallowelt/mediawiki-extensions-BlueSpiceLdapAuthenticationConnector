@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Benedikt Hofmann <hofmann@hallowelt.com>"
+		]
+	},
+	"bs-ldapc-changeuser-label": "Change user",
+	"tooltip-pt-changeuser": "Click to change the user"
+}
