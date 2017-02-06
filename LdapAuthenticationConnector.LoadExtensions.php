@@ -2,11 +2,10 @@
 
 $bsgSetupLDAPUsernameBlacklist = array();
 $bsgSetupLDAPActionBlacklist = array();
-$bsgSetupLDAPSetupFile = array();
 
-function wfMaybeSetupLDAP() {
+function wfMaybeSetupLDAP( $setupFile ) {
         global $IP;
-        global $bsgSetupLDAPUsernameBlacklist, $bsgSetupLDAPActionBlacklist, $bsgSetupLDAPSetupFile;
+        global $bsgSetupLDAPUsernameBlacklist, $bsgSetupLDAPActionBlacklist;
 
         wfSuppressWarnings();
 
@@ -22,15 +21,15 @@ function wfMaybeSetupLDAP() {
 
         //Due to heavy issues with LDAP and the 'Installer' implementation also skip
         //on certain API requests made in the 'ROOT_WIKI'
+        //Best example: Skip LDAP integration for farming actions like
+        //array( 'sfrcreatewiki', 'sfrclonewiki' );
         if( isset( $_GET['action'] ) && in_array( $_GET['action'], $bsgSetupLDAPActionBlacklist ) ) {
                 return false;
         }
 
         wfRestoreWarnings();
 
-        foreach( $bsgSetupLDAPSetupFile as $setupFile ) {
-                require_once( "$IP/$setupFile" );
-        }
+        require_once( "$IP/$setupFile" );
 
         return true;
 }
