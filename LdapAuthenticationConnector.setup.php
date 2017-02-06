@@ -1,6 +1,9 @@
 <?php
 
+require_once "$IP/extensions/LdapAuthentication/LdapAuthentication.php";
+require_once "$IP/extensions/LdapAuthentication/LdapAutoAuthentication.php";
 require_once( __DIR__."/includes/AutoLoader.php" );
+require_once( __DIR__."/LdapAuthenticationConnector.LoadExtensions.php" );
 require_once( __DIR__."/LdapAuthenticationConnector.hooks.php" );
 
 $wgMessagesDirs['LdapAuthenticationConnector'] = __DIR__ . '/i18n';
