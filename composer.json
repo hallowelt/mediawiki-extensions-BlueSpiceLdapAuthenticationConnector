@@ -1,0 +1,25 @@
+{
+	"name": "mediawiki/blue-spice-ldap-authentication-connector",
+	"type": "mediawiki-extension",
+	"description": "Helper for LdapAuthentication",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"autoload": {
+		"files": [
+			"LdapAuthenticationConnector.setup.php"
+		]
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9",
+		"mediawiki/mediawiki-codesniffer": "0.12",
+		"phpunit/phpunit": "4.8.*"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpunit",
+			"phpcs -p -s"
+		]
+	}
+}
