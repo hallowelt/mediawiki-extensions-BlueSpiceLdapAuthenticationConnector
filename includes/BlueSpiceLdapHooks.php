@@ -54,4 +54,10 @@ class BlueSpiceLdapHooks {
 		return true;
 	}
 
+	public static function onWebDAVValidateUserPass( $oUser, $sUsername, $sPassword, &$bResult ) {
+		$bRes = false;
+		LdapAutoAuthentication::Authenticate( $oUser, $bRes );
+		$bResult = $bRes;
+		return true;
+	}
 }
