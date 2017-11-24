@@ -6,7 +6,7 @@
  * @file
  * @ingroup Maintenance
  * @author Patric Wirth <wirth@hallowelt.com>
- * @licence GNU General Public Licence 2.0 or later
+ * @licence GNU General Public Licence 3.0
  */
 $sBaseDir = dirname(dirname(dirname(dirname(dirname(__FILE__)))));
 require_once( "$sBaseDir/maintenance/Maintenance.php" );
