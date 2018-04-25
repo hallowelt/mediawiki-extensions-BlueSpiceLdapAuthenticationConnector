@@ -8,6 +8,10 @@ require_once( __DIR__."/LdapAuthenticationConnector.hooks.php" );
 
 $wgMessagesDirs['LdapAuthenticationConnector'] = __DIR__ . '/i18n';
 
+$bsgPermissionConfig[ 'usermanager-editpassword' ] = [
+	'roles' => []
+];
+
 $bsgLDAPAutoAuthChangeUser = false;
 
 function BSAutoAuthSetup( $domain ) {
