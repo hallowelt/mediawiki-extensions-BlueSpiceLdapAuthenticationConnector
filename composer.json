@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/blue-spice-ldap-authentication-connector",
+	"name": "bluespice/ldapauthenticationconnector",
 	"type": "mediawiki-extension",
 	"description": "Helper for LdapAuthentication",
 	"require": {
@@ -16,5 +16,8 @@
 			"phpunit",
 			"phpcs -p -s"
 		]
+	},
+	"extra": {
+		"installer-name": "BlueSpiceLdapAuthenticationConnector"
 	}
 }
